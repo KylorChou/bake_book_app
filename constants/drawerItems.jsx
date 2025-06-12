@@ -1,36 +1,29 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import Ionicons from '@expo/vector-icons/Ionicons'
+import { Ionicons } from "@expo/vector-icons"
 
-const drawerItems = () => {
-  return (
-    <View>
-      <Text>drawerItems</Text>
-    </View>
-  )
-}
-
-export default drawerItems [
-    {
-        name: 'index',
-        iconType: 'Ionicons',
-        iconName: 'home',
-    },
-    {
-        name: 'baked_page',
-        iconType: 'Materiallcons',
-        iconName: 'bakery-dining',
-    },
-    {
-        name: 'frozen_page',
-        iconType: 'FontAwesome5',
-        iconName: 'ice-cream',
-    },
-    {
-        name: 'settings',
-        iconType: 'FontAwesome6',
-        iconName: 'gear',
-    }
+export const drawerItems = [
+  {
+    name: 'index',
+    label: 'Home',
+    icon: ({ color, size }) => <Ionicons name="home-outline" size={size} color={color} />,
+  },
+  {
+    name: 'frozen_page',
+    label: 'Frozen',
+    icon: ({ color, size }) => <Ionicons name="ice-cream-outline" size={size} color={color} />,
+  },
+  {
+    name: 'baked_page',
+    label: 'Baked',
+    icon: ({ color, size }) => <Ionicons name="flame-outline" size={size} color={color} />,
+  },
+  {
+    name: 'settings',
+    label: 'Settings',
+    icon: ({ color, size }) => <Ionicons name="cog-outline" size={size} color={color} />,
+  },
+  {
+    name: 'other',
+    label: 'Other',
+    icon: ({ color, size }) => <Ionicons name="restaurant-outline" size={size} color={color} />,
+  }
 ]
-
-const styles = StyleSheet.create({})

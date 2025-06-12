@@ -1,14 +1,25 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Header from '../components/header'
 
-const settings = () => {
+const Settings = () => {
   return (
-    <View>
-      <Text>settings</Text>
+    <View style={{ flex: 1}}>
+      <Header title="Settings" />
+      <View style={styles.container}>
+        <Text>Settings</Text>
+      </View>
     </View>
   )
 }
 
-export default settings
+export default Settings
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignContent: 'center',
+        fontSize: 16
+    }
+})

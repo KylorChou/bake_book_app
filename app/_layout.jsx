@@ -1,13 +1,30 @@
+import 'react-native-reanimated'
+
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Slot } from 'expo-router'
+import { Drawer } from 'expo-router/drawer'
+import { drawerItems } from '../constants/drawerItems'
 
 const RootLayout = () => {
   return (
-    <View style={{ flex: 1}}>
-        <Slot/>
-            <Text>RootLayout</Text>  
-    </View>
+    <Drawer 
+      screenOptions={{
+        headerShown: false,
+        drawerActiveTintColor: '#007AFF',
+        drawerInactiveTintColor: '#555',
+      }}
+    >
+      {drawerItems.map((item) => (
+        <Drawer.Screen 
+          key={item.name}
+          name={item.name}
+          options={{
+            drawerLabel: item.label,
+            drawerIcon: item.icon,
+          }}
+        />
+      ))}
+    </Drawer>
   )
 }
 
