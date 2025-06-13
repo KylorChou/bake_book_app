@@ -2,7 +2,7 @@ import { Ionicons } from "@expo/vector-icons"
 
 export const drawerItems = [
   {
-    name: 'index',
+    name: 'homepage',
     label: 'Home',
     icon: ({ color, size }) => <Ionicons name="home-outline" size={size} color={color} />,
   },

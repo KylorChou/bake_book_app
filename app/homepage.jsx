@@ -5,30 +5,28 @@ import { Colors } from "../constants/Colors"
 import ThemedView from '../components/ThemedView'
 import ThemedText from '../components/ThemedText'
 import Spacer from '../components/Spacer'
-import { Link } from 'expo-router'
 
-const Welcome = () => {
+const Home = () => {
   const colorScheme = useColorScheme()
     const theme = Colors[colorScheme] ?? Colors.light
 
   return (
-    <ThemedView style={styles.container}>
-      <Link href="(auth)/login" style={styles.link}>
+    <View style={{ flex: 1 }}>
+      <Header title="Home" />
+      <ThemedView style={styles.container}>
         <ThemedText style={styles.title} title={true}>
-          Login
+          Recently Opened
         </ThemedText>
-      </Link>
-      <Spacer />
-      <Link href="(auth)/register" style={styles.link}>
+        <Spacer />
         <ThemedText style={styles.title} title={true}>
-          Register
+          Favorites
         </ThemedText>
-      </Link>
-    </ThemedView>
+      </ThemedView>
+    </View>
   )
 }
 
-export default Welcome
+export default Home
 
 const styles = StyleSheet.create({
     container: {
@@ -39,9 +37,5 @@ const styles = StyleSheet.create({
     title: {
       fontWeight: 'bold',
       fontSize: 25,
-    },
-    link: {
-      marginVertical: 10,
-      borderBottomWidth: 1
     },
 })

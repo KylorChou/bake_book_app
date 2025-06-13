@@ -11,7 +11,8 @@ const RootLayout = () => {
   const theme = Colors[colorScheme] ?? Colors.light
 
   return (
-    <Drawer 
+    <Drawer
+      initialRouteName="index" 
       screenOptions={{
         headerShown: false,
         drawerActiveTintColor: '#007AFF',
@@ -28,6 +29,18 @@ const RootLayout = () => {
           }}
         />
       ))}
+      <Drawer.Screen
+        name="(auth)/login"
+        options={{ drawerItemStyle: { display: 'none' } }}
+      />
+      <Drawer.Screen
+        name="(auth)/register"
+        options={{ drawerItemStyle: { display: 'none' } }}
+      />
+      <Drawer.Screen
+        name="index"
+        options={{ drawerItemStyle: { display: 'none' } }}
+      />
     </Drawer>
   )
 }
