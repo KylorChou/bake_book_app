@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, useColorScheme } from 'react-native'
 import React from 'react'
 import Header from '../components/header'
 import { Colors } from "../constants/Colors"
+import ThemedView from '../components/ThemedView'
 
 const FrozenDesserts = () => {
   const colorScheme = useColorScheme()
@@ -10,9 +11,9 @@ const FrozenDesserts = () => {
   return (
     <View style={{ flex: 1}}>
       <Header title="Frozen Desserts" />
-      <View style={[styles.container, { backgroundColor: theme.background }]}>
+      <ThemedView style={styles.container}>
         <Text>Frozen Desserts</Text>
-      </View>
+      </ThemedView>
     </View>
   )
 }

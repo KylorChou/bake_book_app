@@ -2,6 +2,9 @@ import { StyleSheet, Text, View, useColorScheme } from 'react-native'
 import React from 'react'
 import Header from '../components/header'
 import { Colors } from "../constants/Colors"
+import ThemedView from '../components/ThemedView'
+import ThemedText from '../components/ThemedText'
+import Spacer from '../components/Spacer'
 
 const Home = () => {
   const colorScheme = useColorScheme()
@@ -10,9 +13,15 @@ const Home = () => {
   return (
     <View style={{ flex: 1 }}>
       <Header title="Home" />
-      <View style={[styles.container, { backgroundColor: theme.background }]}>
-        <Text>Home</Text>
-      </View>
+      <ThemedView style={styles.container}>
+        <ThemedText style={styles.title} title={true}>
+          Recently Opened
+        </ThemedText>
+        <Spacer />
+        <ThemedText style={styles.title} title={true}>
+          Favorites
+        </ThemedText>
+      </ThemedView>
     </View>
   )
 }
@@ -24,5 +33,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-    }
+    },
+    title: {
+      fontWeight: 'bold',
+      fontSize: 25,
+    },
 })

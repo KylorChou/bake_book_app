@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, useColorScheme } from 'react-native'
 import React from 'react'
 import Header from '../components/header'
 import { Colors } from "../constants/Colors"
+import ThemedView from '../components/ThemedView'
 
 const Settings = () => {
   const colorScheme = useColorScheme()
@@ -10,9 +11,9 @@ const Settings = () => {
   return (
     <View style={{ flex: 1}}>
       <Header title="Settings" />
-      <View style={[styles.container, { backgroundColor: theme.background }]}>
+      <ThemedView style={styles.container}>
         <Text>Settings</Text>
-      </View>
+      </ThemedView>
     </View>
   )
 }

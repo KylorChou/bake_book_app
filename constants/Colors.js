@@ -4,7 +4,7 @@ export const Colors = {
   
   dark: {
     text: "#000000",
-    title: "#fff",
+    title: "#98bff5",
     background: "#262626",
     navBackground: "#94b8ff",
     iconColor: "#9591a5",
@@ -13,7 +13,7 @@ export const Colors = {
   },
   light: {
     text: "#ffffff",
-    title: "#201e2b",
+    title: "#132947",
     background: "#e8e8e8",
     navBackground: "#1b1d57",
     iconColor: "#686477",
