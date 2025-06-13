@@ -17,13 +17,13 @@ export const drawerItems = [
     icon: ({ color, size }) => <Ionicons name="flame-outline" size={size} color={color} />,
   },
   {
-    name: 'settings',
-    label: 'Settings',
-    icon: ({ color, size }) => <Ionicons name="cog-outline" size={size} color={color} />,
-  },
-  {
     name: 'other',
     label: 'Other',
     icon: ({ color, size }) => <Ionicons name="restaurant-outline" size={size} color={color} />,
+  },
+  {
+    name: 'settings',
+    label: 'Settings',
+    icon: ({ color, size }) => <Ionicons name="cog-outline" size={size} color={color} />,
   }
 ]

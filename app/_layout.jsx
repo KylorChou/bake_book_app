@@ -1,11 +1,15 @@
 import 'react-native-reanimated'
 
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, useColorScheme } from 'react-native'
 import React from 'react'
 import { Drawer } from 'expo-router/drawer'
 import { drawerItems } from '../constants/drawerItems'
+import { Colors } from "../constants/Colors"
 
 const RootLayout = () => {
+  const colorScheme = useColorScheme()
+  const theme = Colors[colorScheme] ?? Colors.light
+
   return (
     <Drawer 
       screenOptions={{
