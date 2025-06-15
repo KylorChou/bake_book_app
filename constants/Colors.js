@@ -1,9 +1,9 @@
 export const Colors = {
-  primary: "#6849a7",
+  primary: "#496da7",
   warning: "#cc475a",
   
   dark: {
-    text: "#000000",
+    text: "#e8e8e8",
     title: "#98bff5",
     background: "#262626",
     navBackground: "#94b8ff",
@@ -12,7 +12,7 @@ export const Colors = {
     uiBackground: "#2f2b3d",
   },
   light: {
-    text: "#ffffff",
+    text: "#474747",
     title: "#132947",
     background: "#e8e8e8",
     navBackground: "#1b1d57",
