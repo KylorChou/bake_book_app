@@ -5,6 +5,7 @@ import React from 'react'
 import { Drawer } from 'expo-router/drawer'
 import { drawerItems } from '../constants/drawerItems'
 import { Colors } from "../constants/Colors"
+import CustomDrawerContent from '../components/CustomDrawerContent'
 
 const RootLayout = () => {
   const colorScheme = useColorScheme()
@@ -18,6 +19,7 @@ const RootLayout = () => {
         drawerActiveTintColor: '#007AFF',
         drawerInactiveTintColor: '#555',
       }}
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       {drawerItems.map((item) => (
         <Drawer.Screen 

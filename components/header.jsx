@@ -2,18 +2,23 @@ import { StyleSheet, Text, View, TouchableOpacity, useColorScheme } from 'react-
 import React from 'react'
 import { useNavigation } from 'expo-router'
 import { Colors } from "../constants/Colors"
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Ionicons } from '@expo/vector-icons'
 
 const header = ({ title }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
   const colorScheme = useColorScheme()
-    const theme = Colors[colorScheme] ?? Colors.light
+  const theme = Colors[colorScheme] ?? Colors.light
+  const insets = useSafeAreaInsets()
 
   return (
-    <View style={[styles.burger, { backgroundColor: theme.navBackground }]}>
+    <View style={[styles.header, { paddingTop: insets.top,
+      backgroundColor: theme.navBackground
+     }]}>
       <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
-        <Text style={{ fontSize: 24 , color: theme.text}}>{"☰"}</Text>
+        <Ionicons name="menu-outline" size={28} color={theme.headText} />
       </TouchableOpacity>
-      <Text style={[styles.headText, { color: theme.text }]}>{title}</Text>
+      <Text style={[styles.text, { color: theme.headText }]}>{title}</Text> 
     </View>
   )
 }
@@ -21,13 +26,15 @@ const header = ({ title }) => {
 export default header
 
 const styles = StyleSheet.create({
-  burger: {
+  header: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 15,
+    padding: 16,
+    elevation: 4,
   },
-  headText: {
+  text: {
     fontSize: 18,
     marginLeft: 15,
+    fontWeight: 'bold'
   }
 })

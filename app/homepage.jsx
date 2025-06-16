@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <View style={{ flex: 1 }}>
       <Header title="Home" />
-      <ThemedView style={styles.container}>
+      <ThemedView style={styles.container} safe={true}>
         <ThemedText style={styles.title} title={true}>
           Recently Opened
         </ThemedText>
@@ -31,7 +31,6 @@ export default Home
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
     },
     title: {

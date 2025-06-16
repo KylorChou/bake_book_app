@@ -12,7 +12,7 @@ const Welcome = () => {
     const theme = Colors[colorScheme] ?? Colors.light
 
   return (
-    <ThemedView style={styles.container}>
+    <ThemedView safe={true} style={styles.container}>
       <Link href="(auth)/login" style={styles.link}>
         <ThemedText style={styles.title} title={true}>
           Login
@@ -33,7 +33,6 @@ export default Welcome
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
     },
     title: {
