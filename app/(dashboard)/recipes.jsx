@@ -4,21 +4,21 @@ import Header from '../../components/header'
 import { Colors } from "../../constants/Colors"
 import ThemedView from '../../components/ThemedView'
 
-const OtherDesserts = () => {
+const Recipes = () => {
   const colorScheme = useColorScheme()
     const theme = Colors[colorScheme] ?? Colors.light
 
   return (
     <View style={{ flex: 1}}>
-      <Header title="Other" />
+      <Header title="Recipes" />
       <ThemedView style={styles.container}>
-        <Text>Other Desserts</Text>
+        <Text>Recipes</Text>
       </ThemedView>
     </View>
   )
 }
 
-export default OtherDesserts
+export default Recipes
 
 const styles = StyleSheet.create({
     container: {
