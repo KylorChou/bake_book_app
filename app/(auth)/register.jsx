@@ -1,5 +1,5 @@
 import { Keyboard, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'expo-router'
 import { Colors } from '../../constants/Colors'
 
@@ -16,7 +16,7 @@ const Register = () => {
     const[password, setPassword] = useState('')
     const[error, setError] = useState(null)
 
-    const { register } = useUser()
+    const { user, register } = useUser()
 
     const handleSubmit = async () => {
         setError(null)

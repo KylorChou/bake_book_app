@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View, useColorScheme } from 'react-native'
 import React from 'react'
-import Header from '../components/header'
-import { Colors } from "../constants/Colors"
-import ThemedView from '../components/ThemedView'
-import { useUser } from '../hooks/useUser'
-import Spacer from '../components/Spacer'
-import ThemedButton from '../components/ThemedButton'
-import ThemedText from '../components/ThemedText'
+import Header from '../../components/header'
+import { Colors } from "../../constants/Colors"
+import ThemedView from '../../components/ThemedView'
+import { useUser } from '../../hooks/useUser'
+import Spacer from '../../components/Spacer'
+import ThemedButton from '../../components/ThemedButton'
+import ThemedText from '../../components/ThemedText'
 
 const Settings = () => {
   const colorScheme = useColorScheme()

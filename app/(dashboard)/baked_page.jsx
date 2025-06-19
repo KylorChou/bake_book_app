@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, useColorScheme } from 'react-native'
 import React from 'react'
-import Header from '../components/header'
-import { Colors } from "../constants/Colors"
-import ThemedView from '../components/ThemedView'
+import Header from '../../components/header'
+import { Colors } from "../../constants/Colors"
+import ThemedView from '../../components/ThemedView'
 
 const BakedGoods = () => {
   const colorScheme = useColorScheme()

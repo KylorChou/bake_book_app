@@ -1,5 +1,5 @@
 import { Keyboard, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'expo-router'
 import { Colors } from '../../constants/Colors'
 
@@ -12,11 +12,11 @@ import { useUser } from '../../hooks/useUser'
 
 const Login = () => {
 
-    const[email, setEmail] = useState('')
-    const[password, setPassword] = useState('')
+    const[email, setEmail] = useState("")
+    const[password, setPassword] = useState("")
     const[error, setError] = useState(null)
 
-    const { login } = useUser()
+    const { user, login } = useUser()
     
     const handleSubmit = async () => {
         setError(null)

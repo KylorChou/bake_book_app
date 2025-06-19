@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View, useColorScheme } from 'react-native'
 import React from 'react'
-import Header from '../components/header'
-import { Colors } from "../constants/Colors"
-import ThemedView from '../components/ThemedView'
-import ThemedText from '../components/ThemedText'
-import Spacer from '../components/Spacer'
+import Header from '../../components/header'
+import { Colors } from "../../constants/Colors"
+import ThemedView from '../../components/ThemedView'
+import ThemedText from '../../components/ThemedText'
+import Spacer from '../../components/Spacer'
 
 const Home = () => {
   const colorScheme = useColorScheme()
