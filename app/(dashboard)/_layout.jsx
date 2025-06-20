@@ -31,6 +31,10 @@ const RootLayout = () => {
               }}
             />
           ))}
+          <Drawer.Screen
+            name="create"
+            options={{ drawerItemStyle: { display: 'none' }}}
+          />
         </Drawer>
       </UserOnly>
   )

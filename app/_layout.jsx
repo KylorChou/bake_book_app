@@ -3,6 +3,7 @@ import { UserProvider } from '../contexts/UserContext'
 import { StatusBar } from 'expo-status-bar'
 import { Stack } from 'expo-router'
 import { Colors } from '../constants/Colors'
+import { RecipesProvider } from '../contexts/RecipesContext'
 
 export default function Rootlayout() {
     const colorScheme = useColorScheme()
@@ -10,11 +11,13 @@ export default function Rootlayout() {
 
   return (
     <UserProvider>
-        <StatusBar value="auto" />
-        <Stack initialRouteName='index'
-            screenOptions={{ headerShown: false, animation: "none" }}
-        >
-        </Stack>
+      <RecipesProvider>
+          <StatusBar value="auto" />
+          <Stack initialRouteName='index'
+              screenOptions={{ headerShown: false, animation: "none" }}
+          >
+          </Stack>
+        </RecipesProvider>
     </UserProvider>
   )
 }
