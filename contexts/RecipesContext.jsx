@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react"
-import { ID, Query, Role } from "react-native-appwrite"
+import { ID, Query, Role, Permission } from "appwrite"
 import { useUser } from "../hooks/useUser"
+import { databases, client } from '../lib/appwrite'
 
 const DATABASE_ID = "685374250023b934a6fc"
 const COLLECTION_ID = "6853742d00030e70bc96"
@@ -8,7 +9,7 @@ const COLLECTION_ID = "6853742d00030e70bc96"
 export const RecipesContext = createContext()
 
 export function RecipesProvider({ children }) {
-    const[recipes, setRecipes] = useState([])
+    const [recipes, setRecipes] = useState([])
     const { user } = useUser()
 
     async function fetchRecipes() {
@@ -21,7 +22,8 @@ export function RecipesProvider({ children }) {
                 ]
             )
 
-            setRecipes(response.document)
+            setRecipes(response.documents)
+            console.log(response.documents)
         } catch (error) {
             console.error(error.message)
         }
@@ -45,7 +47,7 @@ export function RecipesProvider({ children }) {
                 [
                     Permission.read(Role.user(user.$id)),
                     Permission.update(Role.user(user.$id)),
-                    Permission.delet(Role.user(user.$id)),
+                    Permission.delete(Role.user(user.$id)),
                 ]
             )
         } catch (error) {
@@ -62,11 +64,25 @@ export function RecipesProvider({ children }) {
     }
 
     useEffect(() => {
+        let unsubscribe
+        const channel = `databases.${DATABASE_ID}.collections.${COLLECTION_ID}.documents`
 
         if (user) {
             fetchRecipes()
+
+            unsubscribe = client.subscribe(channel, (response) => {
+                const { payload, events } = response
+
+                if (events[0].includes('create')) {
+                    setRecipes((prevRecipes) => [...prevRecipes, payload])
+                }
+            })
         } else {
             setRecipes([])
+        }
+
+        return () => {
+            if (unsubscribe) unsubscribe()
         }
 
     }, [user])

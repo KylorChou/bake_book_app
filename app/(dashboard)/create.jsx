@@ -25,11 +25,15 @@ const Create = () => {
     const router = useRouter()
 
     const handleSubmit = async () => {
-        if (!name.trim()) return
+        if (
+            !name.trim() || !prepTime.trim() || 
+            !totalTime.trim() || !ingredientList.trim() || 
+            !instructions.trim()
+        ) return
         
         setLoading(true)
 
-        await createBook({ name, tips, bakeTime, prepTime, totalTime, ingredientList, instructions, bakeTemp, freezeTime })
+        await createRecipe({ name, tips, bakeTime, prepTime, totalTime, ingredientList, instructions, bakeTemp, freezeTime })
 
         setName("")
         setTips("")
@@ -154,7 +158,7 @@ const styles = StyleSheet.create({
     },
     scrollContent: {
         paddingVertical: 20,
-        paddingBottom: 100,
+        paddingBottom: 300,
         alignItems: 'center'
     },
     heading: {
