@@ -8,6 +8,7 @@ import ThemedButton from '../../../components/ThemedButton'
 import ThemedView from '../../../components/ThemedView'
 import Spacer from '../../../components/Spacer'
 import ThemedCard from '../../../components/ThemedCard'
+import ThemedLoader from '../../../components/ThemedLoader'
 
 const RecipeDetails = () => {
     const [recipe, setRecipe] = useState(null)
@@ -24,6 +25,14 @@ const RecipeDetails = () => {
 
         loadRecipe()
     }, [id])
+
+    if (!recipe) {
+        return (
+            <ThemedView safe={true} styles={styles.container}>
+                <ThemedLoader />
+            </ThemedView>
+        )
+    }
 
   return (
     <ThemedView safe={true} style={styles.container}>
