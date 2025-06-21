@@ -35,6 +35,11 @@ const RootLayout = () => {
             name="create"
             options={{ drawerItemStyle: { display: 'none' }}}
           />
+
+          <Drawer.Screen 
+            name="recipes/[id]"
+            options={{ drawerItemStyle: { display: 'none' }}}
+          />
         </Drawer>
       </UserOnly>
   )

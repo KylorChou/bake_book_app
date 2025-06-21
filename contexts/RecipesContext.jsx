@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react"
-import { ID, Query, Role, Permission } from "appwrite"
+import { ID, Query, Role, Permission } from "react-native-appwrite"
 import { useUser } from "../hooks/useUser"
 import { databases, client } from '../lib/appwrite'
 
@@ -31,7 +31,13 @@ export function RecipesProvider({ children }) {
 
     async function fetchRecipeById(id) {
         try {
+            const response = await databases.getDocument(
+                DATABASE_ID,
+                COLLECTION_ID,
+                id
+            )
 
+            return response
         } catch (error) {
             console.error(error.message)
         }

@@ -52,7 +52,7 @@ const Create = () => {
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <ThemedView style={styles.container}>
+            <ThemedView style={styles.container} safe={true}>
                 <ScrollView contentContainerStyle={styles.scrollContent}
                     keyboardShouldPersistTaps="handled"
                     showsVerticalScrollIndicator={true}

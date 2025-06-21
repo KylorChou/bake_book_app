@@ -20,14 +20,14 @@ const Recipes = () => {
   return (
     <View style={{ flex: 1}}>
       <Header title="Recipes" />
-      <ThemedView style={styles.container}>
+      <ThemedView style={styles.container} safe={true}>
 
         <FlatList 
           data={recipes}
           keyExtractor={(item) => item.$id}
           contentContainerStyle={styles.list}
           renderItem={({item}) => (
-            <Pressable>
+            <Pressable onPress={() => router.push(`/recipes/${item.$id}`)}>
               <ThemedCard style={styles.card}>
                 <ThemedText style={styles.title}>{item.name}</ThemedText>
               </ThemedCard>
