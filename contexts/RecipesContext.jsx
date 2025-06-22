@@ -63,7 +63,11 @@ export function RecipesProvider({ children }) {
 
     async function deleteRecipe(id) {
         try {
-
+            await databases.deleteDocument(
+                DATABASE_ID,
+                COLLECTION_ID,
+                id
+            )
         } catch (error) {
             console.error(error.message)
         }
@@ -81,6 +85,10 @@ export function RecipesProvider({ children }) {
 
                 if (events[0].includes('create')) {
                     setRecipes((prevRecipes) => [...prevRecipes, payload])
+                }
+
+                if (events[0].includes('delete')) {
+                    setRecipes((prevRecipes) => prevRecipes.filter((recipe) => recipe.$id !== payload.$id))
                 }
             })
         } else {
