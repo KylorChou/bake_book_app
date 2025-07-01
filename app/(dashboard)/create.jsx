@@ -89,6 +89,14 @@ const Create = () => {
 
                     <ThemedTextInput 
                         style={styles.input}
+                        placeholder="Freeze Time"
+                        value={freezeTime}
+                        onChangeText={setFreezeTime}
+                    />
+                    <Spacer />
+
+                    <ThemedTextInput 
+                        style={styles.input}
                         placeholder="Total Time"
                         value={totalTime}
                         onChangeText={setTotalTime}
@@ -100,14 +108,6 @@ const Create = () => {
                         placeholder="Bake Temp"
                         value={bakeTemp}
                         onChangeText={setBakeTemp}
-                    />
-                    <Spacer />
-
-                    <ThemedTextInput 
-                        style={styles.input}
-                        placeholder="Freeze Time"
-                        value={freezeTime}
-                        onChangeText={setFreezeTime}
                     />
                     <Spacer />
 

@@ -53,13 +53,27 @@ const RecipeDetails = () => {
         </View>
         <Spacer />
 
-        <ThemedText style={styles.total}>Total Time: {recipe.totalTime}</ThemedText>
+        <View style={styles.line}>
+            <ThemedText style={styles.total}>Total Time: {recipe.totalTime} | </ThemedText>
+            <ThemedText style={styles.temp}>Bake Temp: {recipe.bakeTemp}</ThemedText>
+        </View>
         <Spacer height={30} />
 
-        <ThemedText style={styles.header} title={true}>Ingredients:</ThemedText>
+        <ThemedText style={styles.header} title={true}>Ingredients</ThemedText>
         <Spacer height={10}/>
         <ThemedText style={styles.ingredients}>{recipe.ingredientList}</ThemedText>
+        <Spacer height={40}/>
+        
+        <ThemedText style={styles.header} title={true}>Instructions</ThemedText>
+        <Spacer height={10} />
+        <ThemedText style={styles.instructions}>{recipe.instructions}</ThemedText>
+        <Spacer height={60} />
 
+        <ThemedText style={styles.header} title={true}>Tips</ThemedText>
+        <Spacer height={10} />
+        <ThemedText style={styles.tips}>{recipe.tips}</ThemedText>
+
+        <Spacer height={60} />
 
         <ThemedButton style={styles.delete} onPress={handleDelete}>
             <Text style={{ color: '#fff', textAlign: 'center' }}>
@@ -90,7 +104,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     temp: {
-        
+        fontWeight: 'bold',
+        fontSize: 20,
     },
     ingredients: {
         textAlign: 'left',
@@ -99,10 +114,16 @@ const styles = StyleSheet.create({
         fontSize: 15,
     },
     instructions: {
-        
+        textAlign: 'left',
+        width: '80%',
+        lineHeight: 20,
+        fontSize: 15,
     },
     tips: {
-
+        textAlignt: 'left',
+        width: '80%',
+        lineHeight: 20,
+        fontSize: 20,
     },
     delete: {
         marginTop: 40,
